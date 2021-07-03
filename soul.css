@@ -1,0 +1,267 @@
+        /* 웹폰트 CDN */
+        @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Sunflower:wght@300&display=swap');
+
+        /* 
+            웹폰트 글자이름
+            font-family: 'Gaegu', cursive;
+            font-family: 'Sunflower', sans-serif; 
+         */
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            background: url(imgs/bg.jpg) no-repeat fixed center/cover;
+        }
+
+
+        /* 상단영역박스 */
+        #wrap {
+            height: 100%;
+        }
+
+        /* 1.타이틀 */
+
+        /* 소울 로고 */
+        h1#mlogo {
+            width: 150px;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+
+        #mlogo img {
+            width: 100%;
+        }
+
+        /* 2. 캐릭터 전체박스 */
+        #cont {
+            position: absolute;
+            BOTTOM: 45PX;
+            RIGHT: -121PX;
+            width: 90%;
+            /* height: 100px; */
+            margin: 0 auto;
+        }
+
+        #cont>ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 캐릭터박스 공통 일렬로 */
+        #cont>ul>li.cat {
+            position: relative;
+            /* parent */
+            width: 24%;
+            height: 180px;
+            margin: 0 .5%;
+            float: left;
+
+            transition: margin-top .6s ease-in-out;
+        }
+
+        #cont>ul>li.cat>div {
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* 2-1-1.캐릭터이미지 */
+        li.cat>div>div:first-child>img {
+            width: 100%;
+            HEIGHT: 180PX;
+        }
+
+        /* 2-1-2.캐릭터이름 */
+        li.cat>div>div:first-child>span {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: -20%;
+        }
+
+        /* 캐릭터이름 이미지 공통 */
+        li.cat>div>div:first-child>span>img {
+            width: 35%;
+        }
+
+        /* 캐릭터이름 첫번째 이미지 숨기기 */
+        li.cat>div>div:first-child>span>img:first-child {
+            display: none;
+        }
+
+        /* 캐릭터 박스에 마우스 오버시 
+         첫번째 이름 이미지 보이고
+         두번째 이름 이미지 숨기기 */
+        li.cat:hover>div>div:first-child>span>img:first-child {
+            display: inline;
+        }
+
+        /* 캐릭터 박스 안보이게 설정 */
+        li.cat:hover>div>div:first-child>span>img:last-child {
+            display: none;
+        }
+
+        /* 2-2.캐릭터 설명박스 */
+        li.cat>div>div:last-child {
+            color: #FFF;
+            height: 0px;
+            /* 처음에 높이값 0으로 숨겼다가
+            캐릭터 박스에 마우스 오버시 높이값 */
+            overflow-y: scroll;
+            /* 넘치는 자식요소 y축으로 스크롤표시  */
+            background: url(imgs/each_BG.png) no-repeat 100%/100%;
+            /* 배경이미지를 가로,세로로 꽉 채운다, 조 가드너 피아노 치는 사진 */
+            border-radius: 10px 0 0 10px;
+            /* 모서리 둥글게 */
+            margin-top: 5%;
+
+            font-family: 'Gaegu', cursive;
+            text-align: justify;
+            /* 양쪽정렬 */
+
+            /* 트랜지션 설정*/
+            transition: height .8s;
+        }
+
+        /* 캐릭터 박스에 오버시 설명박스 보이기 */
+        li.cat:hover>div>div:last-child {
+            height: 300px;
+        }
+
+        /* 캐릭터 박스에 마우스 오버시 자기자신의 마진탑을 윗방향 이동하기  */
+        #cont>li.cat:hover {
+            margin-top: -50px;
+        }
+
+        /* 2-2-1.캐릭터 내용박스 여백 */
+        li.cat>div>div:last-child>h3,
+        li.cat>div>div:last-child>p {
+            padding: 5px 15px;
+            /* 안쪽여백 : 위아래 양쪽 */
+        }
+
+        /* 3.하단정보 */
+        #info {
+            background-color: rgba(154, 175, 206, 0.733);
+            padding: 15px;
+        }
+
+        /* 3-1.하단 텍스트 */
+        #info h4 {
+            text-align: center;
+        }
+
+        #info h4 a {
+            font-size: 14px;
+            color: #222;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        /* a요소(하단 텍스트)에 마우스 오버시 */
+        #info h4 a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* 주소박스 */
+        #info address {
+            width: 1000px;
+            max-width: 90%;
+            border: 2px double rgb(21, 21, 43);
+            margin: auto;
+            /* 블록요소 가로중앙정렬 */
+            padding: 15px;
+            font-style: normal;
+            /* address요소의 기본 이탤릭 없앰 */
+            font-size: 12px;
+            letter-spacing: 0px;
+            /* 글자간격*/
+            word-spacing: 2px;
+            /* 단어간격*/
+            line-height: 18px;
+            /* 줄간격*/
+            text-align: center;
+            /* 글자정렬(중앙) */
+
+        }
+
+        /* 하단로고 */
+        #blogo {
+            width: 74px;
+            height: 36px;
+            margin: 0 auto;
+            /* 마영오! */
+            margin-top: 10px;
+        }
+
+        /* 하단링크 글자 숨기기 */
+        #blogo span {
+            display: none;
+        }
+
+        #blogo a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            /* 배경:색이반고윙/크 */
+            background-image: url(imgs/logo.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 65px;
+        }
+
+        /* 유튜브 동영상 */
+        #screen {
+            top: 100px;
+            position: fixed;
+            right: 200px;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+        }
+
+        /* 스크린 iframe */
+        #screen iframe {
+            position: relative;
+            border-radius: 10px;
+            top: -21%;
+            left: -47%;
+            /* 현재위치로 부터 이동 */
+            width: 193%;
+            height: 134%;
+        }
+
+        /* top 위로가기 버튼 */
+        #top {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: block;
+            width: 80px;
+            height: 80px;
+
+            /* 가로 세로 텍스트 중앙정렬 */
+            text-align: center;
+            line-height: 80px;
+            font-family: arial;
+            /* 글자체 */
+            font-weight: bold;
+            /* 글자두껍게 */
+
+            /* a요소 기본변경 */
+            color: #fff;
+            /* 글자색 */
+            text-decoration: none;
+            /* 기본밑줄없앰 */
+
+            background-color: rgb(231, 189, 109);
+            border-radius: 50%;
+            /* 원 */
+        }
